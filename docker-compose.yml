@@ -1,7 +1,6 @@
 version: '2'
 volumes:
   homebridge:
-  pibell:
 services:
   # homebridge:
   #   build: ./homebridge
@@ -17,5 +16,3 @@ services:
       - mqtt
     privileged: true
     restart: always
-    volumes:
-      - 'pibell:/'
