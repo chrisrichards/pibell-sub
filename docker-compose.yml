@@ -3,10 +3,10 @@ volumes:
   homebridge:
   pibell:
 services:
-  homebridge:
-    build: ./homebridge
-    volumes:
-      - 'homebridge:/'
+  # homebridge:
+  #   build: ./homebridge
+  #   volumes:
+  #     - 'homebridge:/'
   mqtt:
     image: panuwitp/mosquitto-arm
     ports:
