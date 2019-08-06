@@ -15,5 +15,7 @@ services:
     build: ./pibell
     depends_on:
       - mqtt
+    privileged: true
+    restart: always
     volumes:
       - 'pibell:/'
