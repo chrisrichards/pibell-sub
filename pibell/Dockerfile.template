@@ -1,5 +1,9 @@
 FROM balenalib/raspberrypi3-alpine-python:latest
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        python-dev python-rpi.gpio \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN pip install paho-mqtt pibrella
 
 COPY doorbell_sub.py /app
