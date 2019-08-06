@@ -9,8 +9,6 @@ services:
       - 'homebridge:/'
 	mqtt:
     image: panuwitp/mosquitto-arm
-    ports:
-      - '1883:1883'
   pibell:
     build: ./pibell
     depends_on:
