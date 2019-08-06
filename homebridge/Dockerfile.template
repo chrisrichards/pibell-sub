@@ -1,8 +1,34 @@
-FROM oznu/homebridge:raspberry-pi
+FROM balenalib/%%BALENA_MACHINE_NAME%%-node
 
-# Defines our working directory in container
-WORKDIR /usr/src/homebridge
+# use apt-get if you need to install dependencies,
+# for instance if you need ALSA sound utils, just uncomment the lines below.
+RUN apt-get update && apt-get install -yq \
+    git make python g++ nodejs avahi-daemon avahi-discover libnss-mdns \
+    libavahi-compat-libdnssd-dev && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-COPY config.json ./
+RUN /etc/init.d/dbus start
+RUN /etc/init.d/avahi-daemon start
 
+# Install homebridge
+RUN npm install -g --unsafe-perm homebridge
+RUN npm install -g --unsafe-perm homebridge-mqttthing
 
+# Copy config over
+WORKDIR /root/.homebridge/
+
+# Copy
+COPY start.sh start.sh
+COPY config.json config.json
+
+# Execute permissions
+RUN chmod +x start.sh
+
+# Enable systemd init system in container
+ENV INITSYSTEM on
+
+# Expose port
+EXPOSE 5353 51826
+
+# Exec homebridge with persistent config
+CMD /bin/bash /root/.homebridge/start.sh
