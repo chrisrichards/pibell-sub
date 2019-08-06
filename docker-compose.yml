@@ -7,7 +7,7 @@ services:
     build: ./homebridge
     volumes:
       - 'homebridge:/'
-	mqtt:
+  mqtt:
     image: panuwitp/mosquitto-arm
   pibell:
     build: ./pibell
