@@ -1,12 +1,11 @@
 FROM balenalib/raspberrypi3-python:latest
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-        python-dev \
-        python-rpi.gpio \
-    && rm -rf /var/lib/apt/lists/*
+ENV INITSYSTEM on
 
-RUN pip install paho-mqtt pibrella
+COPY ./requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
 
-COPY doorbell_sub.py /app
+COPY ./doorbell_sub.py /usr/src/app
+WORKDIR /usr/src/app
 
-CMD ["bash", "python /app/doorbell_sub.py"]
+CMD ["python", "doorbell_sub.py"]
