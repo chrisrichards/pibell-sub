@@ -1,0 +1,126 @@
+{
+"bridge": {
+    "name": "Homebridge",
+    "username": "CC:22:3D:E3:CE:30",
+    "port": 51826,
+    "pin": "031-45-154"
+},
+
+"description": "Sonoff Homebridge",
+
+"platforms": [],
+  "accessories": [
+    {
+    "accessory": "mqtt-switch-tasmota",
+    "switchType": "outlet",
+  
+    "name": "sonoff01",
+  
+    "url": "mqtt://192.168.0.214",
+    "username": "",
+    "password": "",
+  
+    "topics": {
+      "statusGet": "stat/sonoff01/RESULT",
+      "statusSet": "cmnd/sonoff01/POWER",
+      "stateGet": "tele/sonoff01/STATE"
+    },
+    "onValue": "ON",
+    "offValue": "OFF",
+  
+    "activityTopic": "tele/sonoff01/LWT",
+	"activityParameter": "Online",
+    
+    "startCmd": "cmnd/sonoff01/TelePeriod",
+    "startParameter": "60",
+    
+    "manufacturer": "ITEAD",
+    "model": "Sonoff",
+    "serialNumberMAC": ""
+  },
+  {
+    "accessory": "mqtt-switch-tasmota",
+    "switchType": "outlet",
+  
+    "name": "sonoff02",
+  
+    "url": "mqtt://192.168.0.214",
+    "username": "",
+    "password": "",
+  
+    "topics": {
+      "statusGet": "stat/sonoff02/RESULT",
+      "statusSet": "cmnd/sonoff02/POWER",
+      "stateGet": "tele/sonoff02/STATE"
+    },
+    "onValue": "ON",
+    "offValue": "OFF",
+  
+    "activityTopic": "tele/sonoff02/LWT",
+	"activityParameter": "Online",
+    
+    "startCmd": "cmnd/sonoff02/TelePeriod",
+    "startParameter": "60",
+    
+    "manufacturer": "ITEAD",
+    "model": "Sonoff",
+    "serialNumberMAC": ""
+  },
+  {
+    "accessory": "mqtt-switch-tasmota",
+    "switchType": "outlet",
+  
+    "name": "sonoff03",
+  
+    "url": "mqtt://192.168.0.214",
+    "username": "",
+    "password": "",
+  
+    "topics": {
+      "statusGet": "stat/sonoff03/RESULT",
+      "statusSet": "cmnd/sonoff03/POWER",
+      "stateGet": "tele/sonoff03/STATE"
+    },
+    "onValue": "ON",
+    "offValue": "OFF",
+  
+    "activityTopic": "tele/sonoff03/LWT",
+	"activityParameter": "Online",
+    
+    "startCmd": "cmnd/sonoff03/TelePeriod",
+    "startParameter": "60",
+    
+    "manufacturer": "ITEAD",
+    "model": "Sonoff",
+    "serialNumberMAC": ""
+  },
+  {
+    "accessory": "mqtt-switch-tasmota",
+    "switchType": "outlet",
+  
+    "name": "sonoff04",
+  
+    "url": "mqtt://192.168.0.214",
+    "username": "",
+    "password": "",
+  
+    "topics": {
+      "statusGet": "stat/sonoff04/RESULT",
+      "statusSet": "cmnd/sonoff04/POWER",
+      "stateGet": "tele/sonoff04/STATE"
+    },
+    "onValue": "ON",
+    "offValue": "OFF",
+  
+    "activityTopic": "tele/sonoff04/LWT",
+	"activityParameter": "Online",
+    
+    "startCmd": "cmnd/sonoff04/TelePeriod",
+    "startParameter": "60",
+    
+    "manufacturer": "ITEAD",
+    "model": "Sonoff",
+    "serialNumberMAC": ""
+  }
+]
+}

@@ -1,0 +1,7 @@
+FROM balenalib/raspberrypi3-alpine-python:latest
+
+RUN pip install paho-mqtt pibrella
+
+COPY doorbell_sub.py /app
+
+CMD ["bash", "python /app/doorbell_sub.py"]

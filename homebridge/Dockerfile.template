@@ -1,0 +1,8 @@
+FROM oznu/homebridge:raspberry-pi
+
+# Defines our working directory in container
+WORKDIR /usr/homebridge
+
+COPY config.json /usr/homebridge/
+
+

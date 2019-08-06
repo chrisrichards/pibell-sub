@@ -1,0 +1,19 @@
+version: '2'
+volumes:
+  homebridge:
+  pibell:
+services:
+  homebridge:
+    build: ./homebridge
+    volumes:
+      - 'homebridge:/'
+	mqtt:
+    image: panuwitp/mosquitto-arm
+    ports:
+      - "1883:1883"
+  pibell:
+    build: ./pibell
+    depends_on:
+      - mqtt
+    volumes:
+      - 'pibell:/'
