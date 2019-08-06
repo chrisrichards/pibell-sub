@@ -2,10 +2,15 @@ version: '2'
 volumes:
   homebridge:
 services:
-  # homebridge:
-  #   build: ./homebridge
-  #   volumes:
-  #     - 'homebridge:/'
+  homebridge:
+    build: ./homebridge
+    restart: always
+    network_mode: host
+    volumes:
+      - 'homebridge:/'
+    environment:
+      - PGID=1000
+      - PUID=1000      
   mqtt:
     image: panuwitp/mosquitto-arm
     ports:
