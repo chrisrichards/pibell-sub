@@ -33,7 +33,7 @@ logger = logging.getLogger('doorbell_sub')
 logger.setLevel(logging.INFO)
 
 # create file handler
-fh = logging.FileHandler('/home/pi/doorbell_sub.log')
+fh = logging.FileHandler('/usr/src/app/doorbell_sub.log')
 fh.setLevel(logging.INFO)
 
 # create console handler
