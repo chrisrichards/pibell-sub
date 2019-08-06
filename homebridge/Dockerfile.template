@@ -12,7 +12,7 @@ RUN /etc/init.d/avahi-daemon start
 
 # Install homebridge
 RUN npm install -g --unsafe-perm homebridge
-RUN npm install -g --unsafe-perm homebridge-mqttthing
+RUN npm install -g --unsafe-perm homebridge-mqtt-switch-tasmota
 
 # Copy config over
 WORKDIR /root/.homebridge/
