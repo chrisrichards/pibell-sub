@@ -4,6 +4,7 @@ volumes:
 services:
   homebridge:
     build: ./homebridge
+    privileged: true
     restart: always
     network_mode: host
     volumes:
