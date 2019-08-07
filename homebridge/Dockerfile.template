@@ -1,6 +1,6 @@
 FROM balenalib/%%BALENA_MACHINE_NAME%%-node:10-stretch-run
 
-RUN install-packages \
+RUN install_packages \
     git make python g++ nodejs avahi-daemon avahi-discover libnss-mdns \
     libavahi-compat-libdnssd-dev
 
