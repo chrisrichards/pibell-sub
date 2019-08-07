@@ -2,6 +2,8 @@ version: '2'
 services:
   homebridge:
     build: ./homebridge
+    privileged: true
+    restart: always
   mqtt:
     image: panuwitp/mosquitto-arm
     ports:
