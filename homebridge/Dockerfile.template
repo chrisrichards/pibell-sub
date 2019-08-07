@@ -2,17 +2,17 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%-node
 
 # use apt-get if you need to install dependencies,
 # for instance if you need ALSA sound utils, just uncomment the lines below.
-RUN apt-get update && apt-get install -yq \
-    git make python g++ nodejs avahi-daemon avahi-discover libnss-mdns \
-    libavahi-compat-libdnssd-dev && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -yq \
+#     git make python g++ nodejs avahi-daemon avahi-discover libnss-mdns \
+#     libavahi-compat-libdnssd-dev && \
+#     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # RUN /etc/init.d/dbus start
 # RUN /etc/init.d/avahi-daemon start
 
 # Install homebridge
-RUN npm install -g --unsafe-perm homebridge
-RUN npm install -g --unsafe-perm homebridge-mqtt-switch-tasmota
+# RUN npm install -g --unsafe-perm homebridge
+# RUN npm install -g --unsafe-perm homebridge-mqtt-switch-tasmota
 
 # Copy config over
 WORKDIR /root/.homebridge/
