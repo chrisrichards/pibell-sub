@@ -1,11 +1,9 @@
 FROM balenalib/%%BALENA_MACHINE_NAME%%-node:10-stretch-run
 
 RUN install_packages \
-    git make python g++ nodejs avahi-daemon avahi-discover libnss-mdns \
-    libavahi-compat-libdnssd-dev
+    git make python g++ nodejs avahi-utils libnss-mdns
 
-RUN /etc/init.d/dbus start
-RUN /etc/init.d/avahi-daemon start
+ENV DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 
 # Install homebridge
 RUN npm install -g --unsafe-perm homebridge
