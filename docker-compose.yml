@@ -1,7 +1,7 @@
 version: '2'
 services:
   homebridge:
-    build: ./homebridge
+    image: oznu/homebridge:raspberry-pi
     privileged: true
     restart: always
     environment:
