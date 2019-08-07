@@ -3,7 +3,7 @@ FROM oznu/homebridge:raspberry-pi
 # Enable systemd init system in container
 ENV INITSYSTEM on
 
-RUN install_packages libnss-mdns
+RUN apk add libnss-mdns
 
 COPY config.json /homebridge/config.json
 COPY package.json /homebridge/package.json
