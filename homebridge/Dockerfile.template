@@ -31,4 +31,4 @@ ENV INITSYSTEM on
 EXPOSE 5353 51826
 
 # Exec homebridge with persistent config
-CMD /bin/bash /root/.homebridge/start.sh
+# CMD /bin/bash /root/.homebridge/start.sh
