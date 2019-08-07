@@ -15,14 +15,14 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%-node
 # RUN npm install -g --unsafe-perm homebridge-mqtt-switch-tasmota
 
 # Copy config over
-WORKDIR /root/.homebridge/
+# WORKDIR /root/.homebridge/
 
 # Copy
-COPY start.sh start.sh
-COPY config.json config.json
+# COPY start.sh start.sh
+# COPY config.json config.json
 
 # Execute permissions
-RUN chmod +x start.sh
+# RUN chmod +x start.sh
 
 # Enable systemd init system in container
 ENV INITSYSTEM on
