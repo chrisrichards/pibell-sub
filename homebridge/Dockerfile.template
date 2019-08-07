@@ -7,8 +7,8 @@ RUN apt-get update && apt-get install -yq \
     libavahi-compat-libdnssd-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN /etc/init.d/dbus start
-RUN /etc/init.d/avahi-daemon start
+# RUN /etc/init.d/dbus start
+# RUN /etc/init.d/avahi-daemon start
 
 # Install homebridge
 RUN npm install -g --unsafe-perm homebridge
