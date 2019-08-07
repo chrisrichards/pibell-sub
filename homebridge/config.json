@@ -16,7 +16,7 @@
   
     "name": "sonoff01",
   
-    "url": "mqtt://192.168.0.214",
+    "url": "mqtt://192.168.0.252",
     "username": "",
     "password": "",
   
@@ -44,7 +44,7 @@
   
     "name": "sonoff02",
   
-    "url": "mqtt://192.168.0.214",
+    "url": "mqtt://192.168.0.252",
     "username": "",
     "password": "",
   
@@ -72,7 +72,7 @@
   
     "name": "sonoff03",
   
-    "url": "mqtt://192.168.0.214",
+    "url": "mqtt://192.168.0.252",
     "username": "",
     "password": "",
   
@@ -100,7 +100,7 @@
   
     "name": "sonoff04",
   
-    "url": "mqtt://192.168.0.214",
+    "url": "mqtt://192.168.0.252",
     "username": "",
     "password": "",
   
