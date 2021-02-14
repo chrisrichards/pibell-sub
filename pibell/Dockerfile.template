@@ -1,6 +1,8 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-alpine-python
+FROM balenalib/%%BALENA_MACHINE_NAME%%-python
 
-RUN apk update
+RUN apt-get update && apt-get install -yq \
+   build-essential && \
+   apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
 
