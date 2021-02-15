@@ -1,12 +1,10 @@
 version: '2'
 services:
   mqtt:
-    image: eclipse-mosquitto
+    build: mosquitto
     ports:
       - "1883:1883"
       - "9001:9001"
-    volumes: 
-      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
     restart: always
   pibell:
     build: ./pibell
