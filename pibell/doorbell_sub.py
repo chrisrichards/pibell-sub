@@ -21,9 +21,11 @@ def on_connect(clinet, userdata, flags, rc):
 	client.subscribe("home/doorbell/#")
 
 def on_message(client, userdata, msg):
-	logger.info(msg.topic + " " + str(msg.payload))
+	payload = msg.payload.decode('utf-8')
+	logger.info(msg.topic + " " + payload)
+
 	if (msg.topic == "home/doorbell/state"):
-		if (msg.payload == "pressed"):
+		if (payload == "pressed"):
 			logger.info("Pressed")
 			start_alarm()
 	elif (msg.topic == "home/doorbell/battery"):
