@@ -29,7 +29,7 @@ def on_message(client, userdata, msg):
 			logger.info("Pressed")
 			start_alarm()
 	elif (msg.topic == "home/doorbell/battery"):
-		logger.info("Battery: " + msg.payload)
+		logger.info("Battery: " + payload)
 
 logger = logging.getLogger('doorbell_sub')
 logger.setLevel(logging.INFO)
